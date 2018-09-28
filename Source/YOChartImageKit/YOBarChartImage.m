@@ -61,7 +61,9 @@ const CGFloat kBarPaddingMultipler = 20.0f;
             };
         }
 
-        UIBezierPath *path = [UIBezierPath bezierPathWithRect:rect];
+        int cornerRadius = (_roundedCaps) ? _capsCornerRadius : 0.0;
+        UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:rect byRoundingCorners:UIRectCornerTopLeft|UIRectCornerTopRight cornerRadii:CGSizeMake(cornerRadius, cornerRadius)];
+
         path.lineWidth = self.strokeWidth;
         [self.fillColor setFill];
         [path fill];

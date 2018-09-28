@@ -30,7 +30,7 @@ typedef NS_ENUM(NSInteger, YOBarChartImageBarStyle){
 @property (nonnull, nonatomic) NSArray<NSNumber *> *values;
 
 /**
- *  The maximum value to use for the chart. Setting this will override the 
+ *  The maximum value to use for the chart. Setting this will override the
  *  default behavior of using the highest value as maxValue.
  */
 @property (nonnull, nonatomic) NSNumber* maxValue;
@@ -52,6 +52,18 @@ typedef NS_ENUM(NSInteger, YOBarChartImageBarStyle){
  *  The default width is `0.0`.
  */
 @property (nonatomic) CGFloat strokeWidth;
+
+//-------Rounded caps settings-------//
+/**
+ *  If TRUE, the bars will end with rounded caps
+ */
+@property (nonatomic) BOOL roundedCaps;
+
+/**
+ *  The corner radius for the bars rounded caps
+ *  (used only if "roundedCaps" property is true
+ */
+@property (nonatomic) CGFloat capsCornerRadius;
 
 /**
  *  The color of chart's stroke.
